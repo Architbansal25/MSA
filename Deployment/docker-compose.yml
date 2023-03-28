@@ -1,0 +1,76 @@
+version: "3"
+
+services:
+    discovery-server:
+        container_name: discovery-server
+        image: archit1150/servicediscovery:1
+        ports:
+                - "8761:8761"
+        volumes:
+                - /tmp:/workspace/logs
+    api-gateway:
+        container_name: api-gateway
+        image: archit1150/apigateway:1
+        ports:
+                - "9999:9999"
+        links:
+                - discovery-server:discovery-server
+        environment:
+                - discovery_server_url=http://discovery-server:8761/eureka
+        volumes:
+                - /tmp:/workspace/logs
+    profilemanagement:
+        container_name: profilemanagement
+        image: archit1150/profilemanagement:1
+        ports:
+                - "8045:8045"
+        links:
+            - discovery-server:discovery-server
+        environment:
+                - discovery_server_url=http://discovery-server:8761/eureka
+        volumes:
+                - /tmp:/workspace/logs
+    inventoryservice:
+        container_name: inventoryservice
+        image: archit1150/inventoryservice:1
+        ports:
+                - "8046:8046"
+        links:
+            - discovery-server:discovery-server
+        environment:
+                - discovery_server_url=http://discovery-server:8761/eureka
+        volumes:
+                - /tmp:/workspace/logs
+    searchservice:
+        container_name: searchservice
+        image: archit1150/searchservice:1
+        ports:
+                - "8047:8047"
+        links:
+            - discovery-server:discovery-server
+        environment:
+                - discovery_server_url=http://discovery-server:8761/eureka
+        volumes:
+                - /tmp:/workspace/logs
+    walletservice:
+        container_name: walletservice
+        image: archit1150/walletservice:1
+        ports:
+                - "8048:8048"
+        links:
+            - discovery-server:discovery-server
+        environment:
+                - discovery_server_url=http://discovery-server:8761/eureka
+        volumes:
+                - /tmp:/workspace/logs
+    hotelbookingservice:
+        container_name: hotelbookingservice
+        image: archit1150/hotelbooking:1
+        ports:
+                - "8049:8049"
+        links:
+            - discovery-server:discovery-server
+        environment:
+                - discovery_server_url=http://discovery-server:8761/eureka
+        volumes:
+                - /tmp:/workspace/logs

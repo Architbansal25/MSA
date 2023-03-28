@@ -1,0 +1,666 @@
+{
+	"info": {
+		"_postman_id": "6ad4c005-76a1-4273-92c8-f2d644a75acc",
+		"name": "NAGP MSA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21631063"
+	},
+	"item": [
+		{
+			"name": "Profile Service",
+			"item": [
+				{
+					"name": "get list of all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/profile/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"profile",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get customer by username",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/profile/user/archit123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"profile",
+								"user",
+								"archit123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customer login",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/profile/login/archit123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"profile",
+								"login",
+								"archit123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customer logout",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/profile/logout/archit123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"profile",
+								"logout",
+								"archit123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get customer login status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/profile/login/status/archit123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"profile",
+								"login",
+								"status",
+								"archit123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user scope",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/profile/user/scope/archit123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"profile",
+								"user",
+								"scope",
+								"archit123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cUsername\": \"arc12345\",\r\n    \"cSecret\": \"pass\",\r\n    \"name\": \"TestCustomer\",\r\n    \"contact\": 123434445,\r\n    \"address\": \"delhi\",\r\n    \"scope\": \"customer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9999/profile/add/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"profile",
+								"add",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Wallet Service",
+			"item": [
+				{
+					"name": "get all user wallet money",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/wallet/users/money",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"wallet",
+								"users",
+								"money"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add money to wallet",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"archit123\",\r\n    \"money\": 100000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9999/wallet/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"wallet",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deduct money to wallet",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"archit123\",\r\n    \"money\": 1000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9999/wallet/deduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"wallet",
+								"deduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user wallet money",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8048/wallet/users/money/arc123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8048",
+							"path": [
+								"wallet",
+								"users",
+								"money",
+								"arc123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get wallet user details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/wallet/users/details/archit123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"wallet",
+								"users",
+								"details",
+								"archit123"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inventory Service",
+			"item": [
+				{
+					"name": "get hotel list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/inventory/list/hotel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"inventory",
+								"list",
+								"hotel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create hotel list inventory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hotelID\": 3,\r\n    \"hotelName\": \"leela\",\r\n    \"address\": \"delhi\",\r\n    \"rating\": 5,\r\n    \"price\": 10000,\r\n    \"contact\": 12344,\r\n    \"hotelroomDetails\": {\r\n        \"rooms\": 10,\r\n        \"available\": true\r\n    },\r\n    \"hotelManagerDetails\": {\r\n        \"hotelManagerName\": \"testClient\",\r\n        \"hotelManagerContact\": 123455\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9999/inventory/add/hotel/test123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"inventory",
+								"add",
+								"hotel",
+								"test123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get hotel by hotelName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/inventory/get/hotel?hotelName=leela",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"inventory",
+								"get",
+								"hotel"
+							],
+							"query": [
+								{
+									"key": "hotelName",
+									"value": "leela"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update hotel rooms by hotelName",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hotelName\":\"flora\",\r\n    \"rooms\":\"10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9999/inventory/update/hotel/rooms",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"inventory",
+								"update",
+								"hotel",
+								"rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get hotel by hotel id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/inventory/get/hotel/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"inventory",
+								"get",
+								"hotel",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search Service",
+			"item": [
+				{
+					"name": "search hotels",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"city\":\"delhi\",\r\n    \"rooms\":2,\r\n    \"checkIn\":\"27-03-2022\",\r\n    \"checkOut\":\"28-03-2022\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9999/search/hotels?userName=archit123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"search",
+								"hotels"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "archit123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get wishlist",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"city\":\"gurgaon\",\r\n    \"rooms\":2,\r\n    \"checkIn\":\"27-03-2022\",\r\n    \"checkOut\":\"28-03-2022\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9999/search/get/wishlist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"search",
+								"get",
+								"wishlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user metrics data",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9999/search/metrics/data",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"search",
+								"metrics",
+								"data"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add hotel into wishlist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9999/search/add/wishlist/archit123/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"search",
+								"add",
+								"wishlist",
+								"archit123",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hotel Booking",
+			"item": [
+				{
+					"name": "get bookings by username",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8049/hotel/booking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8049",
+							"path": [
+								"hotel",
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add booking by username",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hotelId\":1,\r\n    \"checkInDate\":\"15-04-2023\",\r\n    \"checOutDate\":\"16-04-2023\",\r\n    \"rooms\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9999/hotel/add/booking/archit123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"hotel",
+								"add",
+								"booking",
+								"archit123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel booking by username",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8049/hotel/cancel/booking/archit123/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8049",
+							"path": [
+								"hotel",
+								"cancel",
+								"booking",
+								"archit123",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
